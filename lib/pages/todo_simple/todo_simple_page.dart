@@ -17,6 +17,9 @@ class _TodoSimplePageState extends State<TodoSimplePage> {
   final _myBox = Hive.box('mybox');
   ToDoDataBase db = ToDoDataBase();
 
+  // text controller
+  final _controller = TextEditingController();
+
   @override
   void initState() {
     // if this is the 1st time ever openin the app, then create default data
@@ -30,8 +33,11 @@ class _TodoSimplePageState extends State<TodoSimplePage> {
     super.initState();
   }
 
-  // text controller
-  final _controller = TextEditingController();
+  @override
+  void dispose() {
+    _controller.clear();
+    super.dispose();
+  }
 
   // checkbox was tapped
   void checkBoxChanged(bool? value, int index) {
@@ -80,6 +86,7 @@ class _TodoSimplePageState extends State<TodoSimplePage> {
       backgroundColor: Colors.yellow[200],
       appBar: AppBar(
         title: const Text('TO DO'),
+        centerTitle: true,
         actions: [
           IconButton(
             onPressed: createNewTask,

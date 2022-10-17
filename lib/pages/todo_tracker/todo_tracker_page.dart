@@ -16,6 +16,7 @@ class TodoTrackerPage extends StatefulWidget {
 
 class _TodoTrackerPageState extends State<TodoTrackerPage> {
   HabitDatabase db = HabitDatabase();
+
   final _myBox = Hive.box("Habit_Database");
 
   @override
@@ -73,7 +74,7 @@ class _TodoTrackerPageState extends State<TodoTrackerPage> {
       ]);
     });
 
-    // clear textfield
+    // clear text field
     _newHabitNameController.clear();
     // pop dialog box
     Navigator.of(context).pop();

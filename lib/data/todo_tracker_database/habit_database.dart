@@ -11,7 +11,6 @@ import '../../pages/todo_tracker/date_time/date_time.dart';
 // reference our box
 final _myBox = Hive.box('Habit_Database');
 
-
 class HabitDatabase {
   List todaysHabitList = [];
   Map<DateTime, int> heatMapDataSet = {};
