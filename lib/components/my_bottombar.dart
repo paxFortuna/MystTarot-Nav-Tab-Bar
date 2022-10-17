@@ -17,7 +17,7 @@ class MyBottomBar extends StatelessWidget {
       onTap: onTap,
       selectedItemColor: Colors.white,
       unselectedItemColor: Colors.grey[300],
-      backgroundColor: Colors.transparent,
+      backgroundColor: Colors.deepPurple[300],
       showSelectedLabels: true,
       showUnselectedLabels: true,
       elevation: 0,

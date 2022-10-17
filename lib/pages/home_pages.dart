@@ -3,6 +3,7 @@ import 'package:ui_nft_app/components/my_abbbar.dart';
 import 'package:ui_nft_app/components/my_bottombar.dart';
 import 'package:ui_nft_app/components/my_tabbar.dart';
 import 'package:ui_nft_app/themes/constants.dart';
+import 'package:ui_nft_app/utils/glass_box.dart';
 
 import '../tabs/recent_tab.dart';
 import '../tabs/top_tab.dart';
@@ -39,9 +40,11 @@ class _HomePageState extends State<HomePage> {
       child: Scaffold(
         backgroundColor: backgroundColor,
         extendBody: true,
-        bottomNavigationBar: MyBottomBar(
-          index: _currentBottomIndex,
-          onTap: _handleIndexChanged,
+        bottomNavigationBar: GlassBox(
+          child: MyBottomBar(
+            index: _currentBottomIndex,
+            onTap: _handleIndexChanged,
+          ),
         ),
         body: ListView(
           children: [
