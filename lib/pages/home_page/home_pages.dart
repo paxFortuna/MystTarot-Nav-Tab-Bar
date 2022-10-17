@@ -1,13 +1,12 @@
 import 'package:flutter/material.dart';
-import 'package:ui_nft_app/components/my_abbbar.dart';
-import 'package:ui_nft_app/components/my_bottombar.dart';
-import 'package:ui_nft_app/components/my_tabbar.dart';
+import 'package:ui_nft_app/root/components/my_bottombar.dart';
 import 'package:ui_nft_app/themes/constants.dart';
 import 'package:ui_nft_app/utils/glass_box.dart';
-
-import '../tabs/recent_tab.dart';
-import '../tabs/top_tab.dart';
-import '../tabs/trending_tab.dart';
+import 'components/my_abbbar.dart';
+import 'components/my_tabbar.dart';
+import 'tabs/recent_tab.dart';
+import 'tabs/top_tab.dart';
+import 'tabs/trending_tab.dart';
 
 class HomePage extends StatefulWidget {
   const HomePage({Key? key}) : super(key: key);
@@ -31,7 +30,6 @@ class _HomePageState extends State<HomePage> {
       _currentBottomIndex = index!;
     });
   }
-
 
   @override
   Widget build(BuildContext context) {

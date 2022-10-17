@@ -1,7 +1,18 @@
 import 'package:flutter/material.dart';
-import 'package:ui_nft_app/pages/home_pages.dart';
+import 'package:hive_flutter/hive_flutter.dart';
+import 'package:ui_nft_app/root/app_page.dart';
 
-void main() {
+void main() async {
+
+  // initialize hive
+  await Hive.initFlutter();
+
+  // open todo_habit_tracker box
+  await Hive.openBox('Habit_Database');
+
+  // open todo_simple box
+  await Hive.openBox('mybox');
+
   runApp(const MyApp());
 }
 
@@ -14,7 +25,7 @@ class MyApp extends StatelessWidget {
       title: 'Flutter Demo',
       theme: ThemeData(primarySwatch: Colors.lime,
       ),
-      home: const HomePage(),
+      home: const AppPage(),
     );
   }
 }
