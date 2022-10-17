@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:ui_nft_app/components/my_abbbar.dart';
+import 'package:ui_nft_app/components/my_bottombar.dart';
 import 'package:ui_nft_app/components/my_tabbar.dart';
 import 'package:ui_nft_app/themes/constants.dart';
 
@@ -22,6 +23,15 @@ class _HomePageState extends State<HomePage> {
     ["Top", const TopTab()],
   ];
 
+  // bottom bar navigation
+  int _currentBottomIndex = 0;
+  void _handleIndexChanged(int? index) {
+    setState(() {
+      _currentBottomIndex = index!;
+    });
+  }
+
+
   @override
   Widget build(BuildContext context) {
     return DefaultTabController(
@@ -29,6 +39,10 @@ class _HomePageState extends State<HomePage> {
       child: Scaffold(
         backgroundColor: backgroundColor,
         extendBody: true,
+        bottomNavigationBar: MyBottomBar(
+          index: _currentBottomIndex,
+          onTap: _handleIndexChanged,
+        ),
         body: ListView(
           children: [
             //title + search button
@@ -39,9 +53,9 @@ class _HomePageState extends State<HomePage> {
             // tab bar
             SizedBox(
               height: 600,
-                child: MyTabBar(
-                  tabOptions: tabOption,
-                ),
+              child: MyTabBar(
+                tabOptions: tabOption,
+              ),
             )
           ],
         ),
